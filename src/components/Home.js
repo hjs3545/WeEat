@@ -1,6 +1,8 @@
 /* eslint_disable */
 import React, { useState } from 'react';
-import './Header.css';
+import './Home.css';
+import Logo from '../assets/logo.svg'
+import styles from './Home.module.css';
 import SearchIcon from '@mui/icons-material/Search';
 import ChatBubbleOutlinedIcon from '@mui/icons-material/ChatBubbleOutlined';
 import NotificationsIcon from '@mui/icons-material/Notifications';
@@ -8,22 +10,25 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import SettingsIcon from '@mui/icons-material/Settings';
 
-function Header() {
+function Home() {
   return (
-    <div className="header">
-      <img className="header_logo" src="https://ifh.cc/g/PlWajt.png" alt="WeEat"/>
-      <div className="header_search">
-        <input className="header_searchInput" type="text"/>
-        <SearchIcon className="header_searchIcon"/>
+    <>
+      <div className={styles.bg} />
+      <div className="header">
+        <img className="header_logo" src={Logo} alt="WeEat"/>
+        <div className="header_search">
+          <input className="header_searchInput" type="text"/>
+          <SearchIcon className="header_searchIcon"/>
+        </div>
+        <div className="header_nav">
+          <NavItem icon={<ChatBubbleOutlinedIcon className="nav_chatBubbleOutlinedIcon" fontSize="large"/>}/>
+          <NavItem icon={<NotificationsIcon className="nav_notificationIcon" fontSize="large"/>}/>
+          <NavItem icon={<AccountCircleIcon className="nav_accountCircleIcon" fontSize="large"/>}>
+            <DropdownMenu></DropdownMenu>
+          </NavItem>
+        </div>
       </div>
-      <div className="header_nav">
-        <NavItem icon={<ChatBubbleOutlinedIcon className="nav_chatBubbleOutlinedIcon" fontSize="large"/>}/>
-        <NavItem icon={<NotificationsIcon className="nav_notificationIcon" fontSize="large"/>}/>
-        <NavItem icon={<AccountCircleIcon className="nav_accountCircleIcon" fontSize="large"/>}>
-          <DropdownMenu></DropdownMenu>
-        </NavItem>
-      </div>
-    </div>
+    </>
   );
 }
 
@@ -56,4 +61,4 @@ function DropdownMenu() {
   )
 }
 
-export default Header;
+export default Home;

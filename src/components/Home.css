@@ -4,6 +4,7 @@
     align-items: center;
     background-color: #ff9900;
     opacity: 0.85;
+    box-shadow:0 2px 5px 0 #AAAAAA;
     position: sticky;
     top: 0;
     z-index: 100;
