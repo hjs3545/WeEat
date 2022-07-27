@@ -1,4 +1,3 @@
-/* eslint_disable */
 import React, { useState } from 'react';
 import { Link } from "react-router-dom"
 import './Home.css';
@@ -30,7 +29,7 @@ function Home() {
       </div>
       <div className={styles.bg} />
       <div>
-        <Link to='/about'>
+        <Link to='/sell'>
           <button className="button">판매하기</button>
         </Link>
       </div>
@@ -42,7 +41,7 @@ function NavItem(props) {
   const [open, setOpen] = useState(false);
   return (
     <li className="nav_item">
-      <a href="#" onClick={() => setOpen(!open)}>
+      <a href="/" onClick={() => setOpen(!open)}>
         {props.icon}
       </a>
       {open && props.children}
@@ -53,7 +52,7 @@ function NavItem(props) {
 function DropdownMenu() {
   function DropdownItem(props) {
     return (
-      <a href="#" className="menu_item">
+      <a href="/" className="menu_item">
         <span className="nav_icon">{props.leftIcon}</span>
         {props.children}
       </a>
