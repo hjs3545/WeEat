@@ -27,7 +27,8 @@
     height: 13px;
     padding: 10px;
     border: 1px solid gray;
-    width: 400px;
+    max-width: 400px;
+    width: 30%;
 }
 
 .header_searchIcon {
@@ -37,7 +38,6 @@
 
 .header_nav{
     display: flex;
-    justify-content: space-evenly;
 }
 
 .nav_item {
@@ -48,6 +48,7 @@
 
 .nav_chatBubbleOutlinedIcon{
     margin-top: 4px;
+    margin-left: 15px;
     color: white;
 }
 
@@ -97,4 +98,19 @@
 
 .menu_item:hover {
     background-color: #DDDDDD;
+}
+
+.button {
+  width: 150px;
+  margin: 100px auto;
+  display:block;
+  padding: 13px 41px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  background-color: #494949;
+  border: none;
+  border-radius: 50px;
+  outline: none;
 }

@@ -1,5 +1,6 @@
 /* eslint_disable */
 import React, { useState } from 'react';
+import { Link } from "react-router-dom"
 import './Home.css';
 import Logo from '../assets/logo.svg'
 import styles from './Home.module.css';
@@ -13,7 +14,6 @@ import SettingsIcon from '@mui/icons-material/Settings';
 function Home() {
   return (
     <>
-      <div className={styles.bg} />
       <div className="header">
         <img className="header_logo" src={Logo} alt="WeEat"/>
         <div className="header_search">
@@ -27,6 +27,12 @@ function Home() {
             <DropdownMenu></DropdownMenu>
           </NavItem>
         </div>
+      </div>
+      <div className={styles.bg} />
+      <div>
+        <Link to='/about'>
+          <button className="button">판매하기</button>
+        </Link>
       </div>
     </>
   );
