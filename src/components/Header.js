@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom"
-import './Home.css';
+import './Header.css';
 import Logo from '../assets/logo.svg'
-import styles from './Home.module.css';
 import SearchIcon from '@mui/icons-material/Search';
 import ChatBubbleOutlinedIcon from '@mui/icons-material/ChatBubbleOutlined';
 import NotificationsIcon from '@mui/icons-material/Notifications';
@@ -10,7 +8,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import SettingsIcon from '@mui/icons-material/Settings';
 
-function Home() {
+function Header() {
   return (
     <>
       <div className="header">
@@ -27,12 +25,6 @@ function Home() {
           </NavItem>
         </div>
       </div>
-      <div className={styles.bg} />
-      <div>
-        <Link to='/sell'>
-          <button className="button">판매하기</button>
-        </Link>
-      </div>
     </>
   );
 }
@@ -41,9 +33,9 @@ function NavItem(props) {
   const [open, setOpen] = useState(false);
   return (
     <li className="nav_item">
-      <a href="/" onClick={() => setOpen(!open)}>
+      <p onClick={() => setOpen(!open)}>
         {props.icon}
-      </a>
+      </p>
       {open && props.children}
     </li>
   )
@@ -52,10 +44,10 @@ function NavItem(props) {
 function DropdownMenu() {
   function DropdownItem(props) {
     return (
-      <a href="/" className="menu_item">
+      <div className="menu_item">
         <span className="nav_icon">{props.leftIcon}</span>
         {props.children}
-      </a>
+      </div>
     )
   }
   return (
@@ -66,4 +58,4 @@ function DropdownMenu() {
   )
 }
 
-export default Home;
+export default Header;
